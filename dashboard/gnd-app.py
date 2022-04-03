@@ -1,11 +1,9 @@
 import glob
 import os
-
 import altair as alt
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
-from matplotlib.pyplot import title
 from wordcloud import WordCloud
 
 path = os.path.dirname(__file__)
@@ -15,7 +13,7 @@ path = os.path.dirname(__file__)
 def load_gnd_top_daten(typ):
     gnd_top_df = pd.DataFrame()
     for file in glob.glob(f"{path}/../stats/title_gnd_{typ}_*.csv"):
-        gnd_top_df = gnd_top_df.append(pd.read_csv(file, index_col=None))
+        gnd_top_df = pd.concat([gnd_top_df,pd.read_csv(file, index_col=None)])
     return gnd_top_df
 
 

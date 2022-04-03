@@ -63,50 +63,50 @@ $(USERDIR)/titel.dat: $(DUMPFILE) | prepare
 	$(PICA) filter -s -v "002@.0 =^ 'T'" $< -o $@
 
 $(USERDIR)/gnd.csv: $(USERDIR)/gnd.dat
-	$(PICA) select "003@.0,002@.0,001A.0,003U.a" -H "gnd_id,bbg,ser,uri" $< -o $@
+	$(PICA) select "003@.0,002@.0,001A.0,003U.a,032T.a" -H "gnd_id,bbg,ser,uri,gender" $< -o $@
 
 $(USERDIR)/Tu_names.csv: $(USERDIR)/gnd.dat
 	$(PICA) filter "002@.0 =^ 'Tu' && 022A.a?" $< | $(PICA) select "003@.0,022A.a" -H "gnd_id,name2" -o $@
 
-$(USERDIR)/022A_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "022A/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,022A/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/028A_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "028A/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,028A/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/028C_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "028C/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,028C/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/029A_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "029A/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,029A/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/029F_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "029F/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,029F/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/032X_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "032X/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,032X/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/033A_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "033A/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,033A/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/033D_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "033D/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,033D/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/033E_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "033E/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,033E/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/033H_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "033H/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,033H/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039B_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039B/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039B/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039C_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039C/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039C/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039D_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039D/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039D/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039E_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039E/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039E/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039H_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039H/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039H/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039I_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039I/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039I/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039S_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039S/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039S/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039T_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039T/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039T/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039U_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039U/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039U/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039V_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039V/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039V/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039W_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039W/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039W/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039X_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039X/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039X/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039Y_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039Y/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039Y/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/039Z_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "039Z/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,039Z/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/041A_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "041A/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,041A/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/044G_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "044G/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,044G/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/044P_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "044P/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,044P/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/044H_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "044H/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,044H/*{9? && 7 =^ 'T',9,a}" -o $@
-$(USERDIR)/044K_9.csv: $(USERDIR)/titel.dat; $(PICA) filter "044K/*{9? && 7 =^ 'T'}" $< | $(PICA) select "003@.0,044K/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/022A_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,022A/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/028A_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,028A/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/028C_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,028C/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/029A_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,029A/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/029F_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,029F/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/032X_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,032X/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/033A_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,033A/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/033D_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,033D/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/033E_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,033E/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/033H_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,033H/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039B_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039B/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039C_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039C/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039D_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039D/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039E_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039E/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039H_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039H/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039I_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039I/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039S_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039S/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039T_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039T/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039U_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039U/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039V_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039V/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039W_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039W/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039X_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039X/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039Y_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039Y/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/039Z_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,039Z/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/041A_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,041A/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/044G_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,044G/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/044P_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,044P/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/044H_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,044H/*{9? && 7 =^ 'T',9,a}" -o $@
+$(USERDIR)/044K_9.csv: $(USERDIR)/titel.dat; $(PICA) select "003@.0,044K/*{9? && 7 =^ 'T',9,a}" -o $@
 
 $(USERDIR)/0XXX_9.csv: $(addprefix $(USERDIR)/,$(TITLE_LINK_OBJS))
 	cat $^ > $@
 
-$(USERDIR)/022R.csv: $(USERDIR)/gnd.dat ; $(PICA) filter "022R.9?" $< | $(PICA) select "003@.0,022R{9?, 9, a, 4}" -o $@
-$(USERDIR)/028R.csv: $(USERDIR)/gnd.dat ; $(PICA) filter "028R.9?" $< | $(PICA) select "003@.0,028R{9?, 9, a, 4}" -o $@
-$(USERDIR)/029R.csv: $(USERDIR)/gnd.dat ; $(PICA) filter "029R.9?" $< | $(PICA) select "003@.0,029R{9?, 9, a, 4}" -o $@
-$(USERDIR)/030R.csv: $(USERDIR)/gnd.dat ; $(PICA) filter "030R.9?" $< | $(PICA) select "003@.0,030R{9?, 9, a, 4}" -o $@
-$(USERDIR)/041R.csv: $(USERDIR)/gnd.dat ; $(PICA) filter "041R.9?" $< | $(PICA) select "003@.0,041R{9?, 9, a, 4}" -o $@
-$(USERDIR)/065R.csv: $(USERDIR)/gnd.dat ; $(PICA) filter "065R.9?" $< | $(PICA) select "003@.0,065R{9?, 9, a, 4}" -o $@
+$(USERDIR)/022R.csv: $(USERDIR)/gnd.dat ; $(PICA) select "003@.0,022R{9?, 9, a, 4}" -o $@
+$(USERDIR)/028R.csv: $(USERDIR)/gnd.dat ; $(PICA) select "003@.0,028R{9?, 9, a, 4}" -o $@
+$(USERDIR)/029R.csv: $(USERDIR)/gnd.dat ; $(PICA) select "003@.0,029R{9?, 9, a, 4}" -o $@
+$(USERDIR)/030R.csv: $(USERDIR)/gnd.dat ; $(PICA) select "003@.0,030R{9?, 9, a, 4}" -o $@
+$(USERDIR)/041R.csv: $(USERDIR)/gnd.dat ; $(PICA) select "003@.0,041R{9?, 9, a, 4}" -o $@
+$(USERDIR)/065R.csv: $(USERDIR)/gnd.dat ; $(PICA) select "003@.0,065R{9?, 9, a, 4}" -o $@
 
 $(USERDIR)/0XXR.csv: $(addprefix $(USERDIR)/,$(GND_LINK_OBJS))
 	cat $^ > $@
